@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>bubble sort</title>
+<script type="text/javascript">
+var arr=new Array();
+function bubble_sort(){
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < arr.length-1; j++) {
+			if(arr[j]>arr[j+1])
+			{
+				var temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+			}
+		}
+	}
+	var disp=document.getElementById("disp");
+	var temp="";
+	var n=/^[0-9]{1,}$/;
+	for (var i = 0; i < arr.length; i++) {
+		if(n.test(arr[i]))
+		temp+=arr[i]+" ";
+	}
+	disp.value=temp;
+}
+function arradd(){
+	var combine=document.getElementById("array").value;
+	arr=combine.split(",");
+	var n=/^[0-9]{1,}$/;
+	for (var i =0 ; i<arr.length; i++) {
+		if(n.test(arr[i]))
+		arr[i]=parseInt(arr[i]);
+	}
+	bubble_sort();
+}
+</script>
+</head>
+<body>
+<form>
+ELEMENTS:<input type="text" id="array"><br>
+		 <input type="button" value="sort" onclick="arradd()"><br>
+RESULT:  <input type="text" id="disp">
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATIC PASSWORD PROTECTION</title>
+<script type="text/javascript">
+function check(){
+var user=document.getElementById("user").value;
+var pass=document.getElementById("pass").value;
+var username="asdf";
+var password="qwerty123";
+if(user==""&&pass=="")
+alert("all feilds are required");
+else
+if(user==username&&pass==password)
+alert("login successful!!");
+else
+alert("invalid credentials!!");
+}
+</script>
+</head>
+<body>
+<form>
+USERNAME:<input type="text" id="user">
+<br>
+PASSWORD:<input type="password" id="pass">
+<br>
+<input type="button" value="login" onclick="check()">
+</form>
+</body>
+</html>

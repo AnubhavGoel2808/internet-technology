@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q6a</title>
+	<script type="text/javascript">
+		var arr=new Array();
+		function add_ele() {
+
+			var x=document.getElementById('1');
+			arr.push(x.value);
+			x.value="";
+			display();
+		}
+		function remove_ele() {
+			var x=arr.pop();
+			document.getElementById('2').value=x;
+			display();
+
+		}
+		function display() {
+			var temp="";
+			for (var i = 0; i < arr.length; i++) {
+				temp+=arr[i]+" ";
+			}
+			document.getElementById('stacked').value=temp;
+		}
+	</script>
+</head>
+<body>
+<form>
+	<input type="number" id="1" >
+	<input type="button" value="add" onclick="add_ele()" >
+	<input type="number" id="2" >
+	<input type="button" value="remove" onclick="remove_ele()" ><br>
+	<input type="text" id="stacked">
+</form>
+</body>
+</html>

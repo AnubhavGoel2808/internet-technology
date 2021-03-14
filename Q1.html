@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>js1</title>
+<script type="text/javascript">
+function check(){
+	var name=document.getElementById('NAME').value;
+  	var d =document.getElementById('Date').value;
+	var r =document.getElementById('ROLL').value;
+	var s =/^[a-zA-z]{1,}$/;
+	var n =/^[0-9]{7}$/;
+if(name==""||d==""||r=="")
+	alert("FEILDS EMPTY!!!! ENTER AGAIN");
+else
+	{
+		if(n.test(r))
+			alert("ROLLNO VALIDATED");
+		else
+			alert("ROLLNO NOT VALIDATED");
+		if(s.test(name))
+			alert("NAME VALIDATED");
+		else
+			alert("NAME NOT VALIDATED");
+		
+	var date=new Date(d);
+	alert(date.toDateString());
+
+}
+
+}
+</script>
+</head>
+<body>
+<form>
+ROLL NUMBER:
+<input type="NAME" id ="ROLL">
+<br>
+NAME:
+<input type="NAME" id="NAME">
+<br>
+DOB:
+<input type="DATE" id="Date">
+<br>
+<input type="button" value="validate" onclick="check()">
+</form>
+
+
+</body>
+</html>
